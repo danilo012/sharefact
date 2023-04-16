@@ -63,7 +63,7 @@ body {
 
 .main {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 150px 1fr;
   gap: 48px;
 
   height: calc(100vh - 48px - 68px - 40px);
@@ -81,7 +81,7 @@ body {
 }
 
 .category {
-  margin: 16px;
+  margin: 5px;
 }
 
 section {
@@ -210,13 +210,23 @@ ul {
 }
 
 .btn-all-categories {
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   width: 100%;
+  display:inline;
+        padding: 5px 10px;
+        text-align: center;
+        font-size: 5px;
+        margin: 4px 2px;
 }
 
 .btn-category {
-  width: 100%;
+  width: 50%;
   background-image: none;
+  display:inline;
+        padding: 10px 15px;
+        text-align: center;
+        font-size: 5px;
+        margin: 4px 2px;
 }
 
 /* FORM */
