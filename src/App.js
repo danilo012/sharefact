@@ -7,34 +7,34 @@ import "./style.css";
 const initialFacts = [
   {
     id: 1,
-    text: "I really like this app, super thanks",
-    source: "Nora ariola",
-    category: "Post",
+    text: "React is being developed by Meta (formerly facebook)",
+    source: "https://opensource.fb.com/",
+    category: "news",
     votesInteresting: 24,
     votesMindblowing: 9,
     votesFalse: 4,
-    createdIn: 2023,
+    createdIn: 2021,
   },
   {
     id: 2,
-    text: "last day i earned ₱1500.thanks to you echozone. wishing for more blessings to come.",
+    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
     source:
       "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    category: "Post",
+    category: "news",
     votesInteresting: 11,
     votesMindblowing: 2,
     votesFalse: 0,
-    createdIn: 2023,
+    createdIn: 2019,
   },
   {
     id: 3,
-    text: "Good earning app, no need to invest, i earned a lot from playing radio button only. ",
+    text: "Lisbon is the capital of Portugal",
     source: "https://en.wikipedia.org/wiki/Lisbon",
-    category: "Post",
+    category: "news",
     votesInteresting: 8,
     votesMindblowing: 3,
     votesFalse: 1,
-    createdIn: 2023,
+    createdIn: 2015,
   },
 ];
 
@@ -97,8 +97,7 @@ function Loader() {
 }
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "Today I Learned";
-
+  const appTitle = "WRITE ZONE";
   return (
     <header className="header">
       <div className="logo">
@@ -112,21 +111,14 @@ function Header({ showForm, setShowForm }) {
           setShowForm((show) => !show);
         }}
       >
-        {showForm ? "Close" : "Share a Fact"}
+        {showForm ? "Close" : "CREATE PUBLIC POST"}
       </button>
     </header>
   );
 }
 
 const CATEGORIES = [
-  { name: "post", color: "#3b82f6" },
-  { name: "Help", color: "#16a34a" },
-  { name: "Feedback", color: "#ef4444" },
-  { name: "Suggestions", color: "#eab308" },
-  { name: "Reactions", color: "#db2777" },
-  { name: "Promotions", color: "#14b8a6" },
-  { name: "Rewards", color: "#f97316" },
-  { name: "news", color: "#8b5cf6" },
+  { name: "post", color: "#3b82f6" },{ name: "suggest", color: "#ef4444" },{ name: "promote", color: "#eab308" },{ name: "follow", color: "#14b8a6" },{ name: "help", color: "#f97316" },{ name: "update", color: "#8b5cf6" },
 ];
 
 function NewFactForm({ setFacts, setShowForm }) {
@@ -136,7 +128,7 @@ function NewFactForm({ setFacts, setShowForm }) {
   const [isUploading, setIsUploading] = useState(false);
 
   const textLength = text.length;
-  const countText = 200 - textLength;
+  const countText = 1000000 - textLength;
 
   function TextLimit() {
     return <span style={{ color: "red" }}>{countText} text limit reached</span>;
@@ -157,7 +149,7 @@ function NewFactForm({ setFacts, setShowForm }) {
     e.preventDefault();
 
     // 2. Check if data is valid, if so create a new facct
-    if (text && isValidHttpUrl(source) && category && textLength <= 200) {
+    if (text && isValidHttpUrl(source) && category && textLength <= 1000000) {
       /*
       3. Create a new Fact
       const newFact = {
@@ -200,15 +192,15 @@ function NewFactForm({ setFacts, setShowForm }) {
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Share a fact with the World..."
+        placeholder="What's in your mind..."
         disabled={isUploading}
       />
-      <span>{textLength > 200 ? <TextLimit /> : countText}</span>
+      <span>{textLength >  1000000? <TextLimit /> : countText}</span>
       <input
         type="text"
-        value={text}
+        value={source}
         onChange={(e) => setSource(e.target.value)}
-        placeholder="Your name"
+        placeholder="type 👉 http://post"
         disabled={isUploading}
       />
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
@@ -266,8 +258,8 @@ function FactList({ facts, setFacts }) {
           fontWeight: "bolder",
         }}
       >
-        No facts for this category yet! <br />
-        Create the first one ✌.
+        No data for this category yet! <br />
+        Create the first one to post✌.
       </p>
     );
   }
