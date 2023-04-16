@@ -97,7 +97,7 @@ function Loader() {
 }
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "WRITE ZONE";
+  const appTitle = "THUMBS APP";
   return (
     <header className="header">
       <div className="logo">
