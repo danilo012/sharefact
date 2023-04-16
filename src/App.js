@@ -97,7 +97,7 @@ function Loader() {
 }
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "THUMBS APP";
+  const appTitle = "THUMBS APP.ph";
   return (
     <header className="header">
       <div className="logo">
